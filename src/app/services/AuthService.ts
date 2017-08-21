@@ -5,7 +5,7 @@ export class AuthService {
 
   // 登录成功 将用户名存储到localStorage
   login(user: string, password: string): boolean {
-    if (user === '1' && password === '1') {
+    if (user !== '' && password !== '1') {
       localStorage.setItem('username', user);
       return true;
     }

@@ -7,7 +7,44 @@ import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { rootRouterConfig} from "./app.routes";
+// material
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+
+import {
+  MdAutocompleteModule,
+  MdButtonModule,
+  MdButtonToggleModule,
+  MdCardModule,
+  MdCheckboxModule,
+  MdChipsModule,
+  MdCoreModule,
+  MdTableModule,
+  MdDatepickerModule,
+  MdDialogModule,
+  MdExpansionModule,
+  // MdFormFieldModule,
+  MdGridListModule,
+  MdIconModule,
+  MdInputModule,
+  MdListModule,
+  MdMenuModule,
+  MdNativeDateModule,
+  MdPaginatorModule,
+  MdProgressBarModule,
+  MdProgressSpinnerModule,
+  MdRadioModule,
+  MdRippleModule,
+  MdSelectModule,
+  MdSidenavModule,
+  MdSliderModule,
+  MdSlideToggleModule,
+  MdSnackBarModule,
+  MdSortModule,
+  MdTabsModule,
+  MdToolbarModule,
+  MdTooltipModule,
+  StyleModule} from '@angular/material';
 
 // component
 import { AUTH_PROVIDERS} from './services/AuthService';
@@ -19,8 +56,6 @@ import { TaobaoComponent } from './component/taobao/taobao.component';
 import { OfoComponent } from './component/ofo/ofo.component';
 
 
-// material
-// import {MdButtonModule, MdCheckboxModule} from '@angular/material';
 
 //1>导入守卫
 import {LoggedInGuard}from './guard/loggedIn.guard';
@@ -36,7 +71,47 @@ import {LoggedInGuard}from './guard/loggedIn.guard';
     TaobaoComponent,
     OfoComponent
   ],
-  imports: [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(rootRouterConfig)],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    RouterModule.forRoot(rootRouterConfig),
+    BrowserAnimationsModule,
+    MdAutocompleteModule,
+    MdButtonModule,
+    MdButtonToggleModule,
+    MdCardModule,
+    MdCheckboxModule,
+    MdChipsModule,
+    MdCoreModule,
+    MdTableModule,
+    MdDatepickerModule,
+    MdDialogModule,
+    MdExpansionModule,
+    // MdFormFieldModule,
+    MdGridListModule,
+    MdIconModule,
+    MdInputModule,
+    MdListModule,
+    MdMenuModule,
+    MdNativeDateModule,
+    MdPaginatorModule,
+    MdProgressBarModule,
+    MdProgressSpinnerModule,
+    MdRadioModule,
+    MdRippleModule,
+    MdSelectModule,
+    MdSidenavModule,
+    MdSliderModule,
+    MdSlideToggleModule,
+    MdSnackBarModule,
+    MdSortModule,
+    MdTabsModule,
+    MdToolbarModule,
+    MdTooltipModule,
+    StyleModule
+  ],
+  exports: [MdButtonModule, MdCheckboxModule],
   //3>将LoggedInGuard添加到提供者列表中
   providers: [LoggedInGuard, AUTH_PROVIDERS, { provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
